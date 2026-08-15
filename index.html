@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Cirillo Mottin de Lima" content="width=device-width, initial-scale=1.0">
+  <title> Cirillo Mottin de Lima — Portfólio </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO: fica fixo no topo, com nome e menu de navegação -->
+  <header class="site-header">
+    <span class="logo">&lt;/&gt; Cirillo Mottin de Lima </span>
+    <nav>
+      <a href="#sobre">sobre</a>
+      <a href="#skills">skills</a>
+      <a href="#projetos">projetos</a>
+      <a href="#contato">contato</a>
+    </nav>
+  </header>
+
+  <!-- HERO: primeira coisa que a pessoa vê. Usamos um "terminal" fake
+       que digita o texto sozinho via JavaScript (efeito em script.js) -->
+  <section class="hero">
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="terminal-title">sobre-mim.sh</span>
+      </div>
+      <div class="terminal-body">
+        <p><span class="prompt">$</span> <span id="typed-text"></span><span class="cursor">▌</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE: um parágrafo curto contando quem você é -->
+  <section id="sobre" class="section">
+    <h2><span class="tag">01</span> sobre</h2>
+    <p class="about-text">
+      Profesional en trasición a sector tecnológico, desarrollando hablidades en programación, dessarrolloweb, Python, Java y base de datos. Busco transfomar mi experiencia profesional previa en una carrera tecnológica, centrándome en el desarollo de software y sitemas.
+    </p>
+  </section>
+
+  <!-- SKILLS: lista em formato de "array", brincando com sintaxe de código -->
+  <section id="skills" class="section">
+    <h2><span class="tag">02</span> skills</h2>
+    <div class="code-block">
+      <span class="code-line"><span class="k">const</span> <span class="v">habilidades</span> = </span>
+      <span class="code-line indent">"HTML",</span>
+      <span class="code-line indent">"CSS",</span>
+      <span class="code-line indent">"JavaScript",</span>
+      <span class="code-line indent">"Phython",</span>
+
+      <span class="code-line indent muted"> </span>
+      <span class="code-line"> </span>
+    </div>
+  </section>
+
+  <!-- PROJETOS: começa vazio de propósito, como um convite a preencher -->
+  <section id="projetos" class="section">
+    <h2><span class="tag">03</span> projetos</h2>
+    <div class="projects-grid">
+      <a class="project-card empty" href="#">
+        <span class="plus">+</span>
+        <span>Adicione seu primeiro projeto aqui</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTATO: links para GitHub, LinkedIn e email -->
+  <footer id="contato" class="section footer">
+    <h2><span class="tag">04</span> contato</h2>
+    <div class="contact-links">
+      <a href="mailto:cirillo_lima@iclou.com">email</a>
+      <a href="https://github.com/@cirillolima-lc7" target="_blank" rel="noopener">github</a>
+      <a href="https://linkedin.com/in/seu-usuario" target="_blank" rel="noopener">linkedin</a>
+    </div>
+    <p class="footer-note">Feito com HTML, CSS e JS por Cirillo Mottin de Lima </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

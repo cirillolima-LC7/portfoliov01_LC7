@@ -1,0 +1,199 @@
+/* ===== TOKENS: cores, fontes e espaçamentos usados no site inteiro ===== */
+:root {
+  --bg: #040404;          /* roxo-ameixa bem escuro, fundo principal */
+  --bg-alt: #333233;       /* variação um pouco mais clara, pra seções */
+  --text: #F3EFE9;         /* off-white, texto principal */
+  --muted: #a5a3a5;        /* texto secundário, discreto */
+  --accent: #C6FF3D;       /* verde-limão, cor de destaque (links, títulos) */
+  --border: #292729;       /* linhas divisórias sutis */
+  --font-display: 'JetBrains Mono', 'Courier New', monospace;
+  --font-body: 'Inter', -apple-system, sans-serif;
+}
+
+/* Fontes: JetBrains Mono para títulos (visual de código),
+   Inter para o corpo do texto (mais legível em blocos longos) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Foco visível no teclado — importante para acessibilidade */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ===== CABEÇALHO ===== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.site-header nav a {
+  color: var(--text);
+  margin-left: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+}
+
+.site-header nav a:hover { color: var(--accent); text-decoration: none; }
+
+/* ===== HERO / TERMINAL ===== */
+.hero {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 1.5rem;
+}
+
+.terminal {
+  width: 100%;
+  max-width: 640px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1rem;
+  background: #424242;
+  border-bottom: 1px solid var(--border);
+}
+
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+.terminal-title {
+  margin-left: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.terminal-body {
+  padding: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  min-height: 3.5rem;
+}
+
+.prompt { color: var(--accent); }
+.cursor { animation: blink 1s step-end infinite; color: var(--accent); }
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ===== SEÇÕES ===== */
+.section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem;
+}
+
+.section h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.tag {
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.about-text { color: var(--text); max-width: 60ch; }
+
+/* Bloco de "código" para a lista de skills */
+.code-block {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.code-line.indent { padding-left: 1.5rem; }
+.code-line.muted { color: var(--muted); }
+.code-block .k { color: #7dd3fc; }
+.code-block .v { color: var(--accent); }
+
+/* ===== PROJETOS ===== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+  color: var(--muted);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.plus { font-size: 1.8rem; font-family: var(--font-display); }
+
+/* ===== RODAPÉ / CONTATO ===== */
+.footer { border-top: 1px solid var(--border); text-align: left; }
+.contact-links { display: flex; gap: 1.5rem; margin-bottom: 1rem; }
+.footer-note { color: var(--muted); font-size: 0.85rem; }
+
+/* ===== RESPONSIVO: ajustes para telas pequenas ===== */
+@media (max-width: 600px) {
+  .site-header { flex-direction: column; gap: 0.75rem; padding: 1rem; }
+  .site-header nav a { margin: 0 0.6rem; }
+  .hero { padding: 3rem 1rem; }
+  .terminal-body { font-size: 0.95rem; }
+}
+
+/* Respeita quem prefere menos animação */
+@media (prefers-reduced-motion: reduce) {
+  .cursor { animation: none; }
+}
